@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --nodes=2
+#SBATCH --nodes=128
 #SBATCH --ntasks-per-node=1
 #SBATCH --partition=general-compute
 #SBATCH --mem-per-cpu=8000
-#SBATCH --time=00:05:00
+#SBATCH --time=00:10:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=snehakri@buffalo.edu
 #SBATCH --output=slurmOut.out
@@ -22,4 +22,5 @@ module load intel-mpi intel
 #
 export I_MPI_DEBUG=4    # nice debug level, spits out useful info
 export I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so
-srun ./quick 100000
+srun ./quick 7812500
+
